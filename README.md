@@ -138,14 +138,14 @@ flowchart TD
    Open `.env` and configure your API keys:
    ```env
    # Google Gemini AI Key
-   VITE_GEMINI_API_KEY=your_gemini_api_key
+   VITE_GEMINI_API_KEY=<your_key>
 
    # Government of India AGMARKNET API Key
-   VITE_DATAGOV_API_KEY=your_datagov_api_key
+   VITE_DATAGOV_API_KEY=<your_key>
 
    # Geoapify Driving Routing API Key
-   VITE_GEOAPIFY_API_KEY=your_geoapify_api_key
-   VITE_ROUTING_API_KEY=your_geoapify_api_key
+   VITE_GEOAPIFY_API_KEY=<your_key>
+   VITE_ROUTING_API_KEY=<your_key>
    ```
 
 4. **Run the Development Server:**
