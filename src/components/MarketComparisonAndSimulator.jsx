@@ -96,7 +96,7 @@ export default function MarketComparisonAndSimulator({
         </div>
 
         {/* 1. TOP MODULE: EDITORIAL ALL-MANDIS COMPARISON TABLE */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#E3DFD2] shadow-warm-md overflow-hidden mb-10 sm:mb-14">
+        <div className="clay-card rounded-3xl border border-white/80 overflow-hidden mb-10 sm:mb-14">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left border-collapse">
               <thead>
@@ -222,7 +222,7 @@ export default function MarketComparisonAndSimulator({
         </div>
 
         {/* 2. BOTTOM MODULE: SENSITIVITY & WHAT-IF RE-OPTIMIZER */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#E3DFD2] shadow-warm-sm">
+        <div className="clay-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/80">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[#EEEDE7]">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#B59658] mb-1">
@@ -241,7 +241,7 @@ export default function MarketComparisonAndSimulator({
 
             <button
               onClick={handleReset}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#EEEDE7] hover:bg-[#E3DFD2] text-[#173B2B] text-xs font-bold transition shadow-sm self-start sm:self-auto"
+              className="clay-button-light inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[#173B2B] text-xs font-bold transition self-start sm:self-auto cursor-pointer"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>{lang === 'hi' ? "रीसेट करें" : "Reset Baseline"}</span>
@@ -254,7 +254,7 @@ export default function MarketComparisonAndSimulator({
             <div className="lg:col-span-7 space-y-6">
               
               {/* Slider 1: Spot Price Adjustment */}
-              <div className="bg-[#F7F5EF] p-5 rounded-2xl border border-[#E3DFD2]">
+              <div className="clay-inset p-5 rounded-2xl">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#1D2420]">
                     {lang === 'hi' ? "मंडी भाव बदलाव (₹/किलो):" : "Spot Rate Adjustment (₹/kg):"}
@@ -280,7 +280,7 @@ export default function MarketComparisonAndSimulator({
               </div>
 
               {/* Slider 2: Freight Tariff Adjustment */}
-              <div className="bg-[#F7F5EF] p-5 rounded-2xl border border-[#E3DFD2]">
+              <div className="clay-inset p-5 rounded-2xl">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#1D2420]">
                     {lang === 'hi' ? "गाड़ी भाड़ा दर (₹/किमी):" : "Vehicle Freight Rate (₹/km):"}
@@ -309,7 +309,7 @@ export default function MarketComparisonAndSimulator({
 
             {/* Right Output: Impact Result Card */}
             <div className="lg:col-span-5">
-              <div className="bg-[#173B2B] text-[#F7F5EF] rounded-2xl p-6 sm:p-7 shadow-warm-lg border border-[#173B2B]">
+              <div className="clay-card-forest text-[#F7F5EF] rounded-2xl p-6 sm:p-7">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#D4BA7B] mb-2">
                   {lang === 'hi' ? "सिमुलेशन के बाद शुद्ध कमाई" : "Simulated Net Return"}
                 </div>
@@ -321,8 +321,8 @@ export default function MarketComparisonAndSimulator({
                 {/* Delta Callout */}
                 <div className={`p-3.5 rounded-xl text-xs font-bold flex items-center justify-between mb-4 ${
                   delta >= 0 
-                    ? 'bg-emerald-900/60 text-emerald-200 border border-emerald-700/50' 
-                    : 'bg-red-900/60 text-red-200 border border-red-700/50'
+                    ? 'bg-emerald-900/60 text-emerald-200 border border-emerald-700/50 shadow-inner' 
+                    : 'bg-red-900/60 text-red-200 border border-red-700/50 shadow-inner'
                 }`}>
                   <span>{lang === 'hi' ? "आधार से लाभ अंतर:" : "Variance from Baseline:"}</span>
                   <span>{delta >= 0 ? `+ ₹${delta.toLocaleString('en-IN')}` : `− ₹${Math.abs(delta).toLocaleString('en-IN')}`}</span>

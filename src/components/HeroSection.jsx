@@ -430,16 +430,16 @@ export default function HeroSection({
 
             {/* Right Column: DUAL RECOMMENDATION DECISION CARD */}
             <div className="lg:col-span-5">
-              <div className="bg-white/95 backdrop-blur-md text-[#1D2420] rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-2xl border border-white/40">
+              <div className="clay-card bg-white/95 backdrop-blur-md text-[#1D2420] rounded-3xl p-5 sm:p-7 border border-white/70">
                 
                 {/* Dual Option Switcher Tabs when both exist */}
                 {rec2 ? (
-                  <div className="flex items-center gap-1.5 p-1 bg-[#EEEDE7] rounded-xl mb-4 border border-[#E3DFD2]">
+                  <div className="flex items-center gap-2 p-1.5 clay-inset rounded-2xl mb-4">
                     <button
                       onClick={() => setSelectedRecTab('rec1')}
-                      className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                      className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                         selectedRecTab === 'rec1'
-                          ? 'bg-[#173B2B] text-[#D4BA7B] shadow-sm'
+                          ? 'clay-button-primary text-[#D4BA7B]'
                           : 'text-[#68736C] hover:text-[#173B2B]'
                       }`}
                     >
@@ -448,23 +448,23 @@ export default function HeroSection({
                     </button>
                     <button
                       onClick={() => setSelectedRecTab('rec2')}
-                      className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                      className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                         selectedRecTab === 'rec2'
-                          ? 'bg-[#173B2B] text-[#D4BA7B] shadow-sm'
+                          ? 'clay-button-primary text-[#D4BA7B]'
                           : 'text-[#68736C] hover:text-[#173B2B]'
                       }`}
                     >
-                      <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                      <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
                       <span>{lang === 'hi' ? "विकल्प 2: सर्वोत्तम विकल्प" : "Option 2: Best Alt"}</span>
                     </button>
                   </div>
                 ) : (
                   <div className="flex items-center justify-between pb-3 border-b border-[#EEEDE7]">
-                    <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#173B2B] text-[#D4BA7B] flex items-center gap-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full clay-button-primary text-[#D4BA7B] flex items-center gap-1.5">
                       <Award className="w-3.5 h-3.5" />
                       <span>{t.recommendation.badge}</span>
                     </span>
-                    <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                       {lang === 'hi' ? "एकमात्र सुरक्षित विकल्प" : "100% Feasible Choice"}
                     </span>
                   </div>
@@ -494,14 +494,14 @@ export default function HeroSection({
                       </div>
 
                       {/* Big Net Return Callout */}
-                      <div className="my-4 p-4 rounded-2xl bg-[#F7F5EF] border border-[#E3DFD2]">
+                      <div className="my-4 p-4.5 rounded-2xl clay-inset">
                         <div className="text-xs uppercase font-bold text-[#68736C]">
                           {t.recommendation.estimatedNetReturn}
                         </div>
                         <div className="font-serif text-4xl sm:text-5xl font-bold text-[#173B2B] mt-1 leading-none tracking-tight">
                           ₹{activeRec.netReturn.toLocaleString('en-IN')}
                         </div>
-                        <div className="text-xs text-[#315C43] font-semibold mt-1">
+                        <div className="text-xs text-[#315C43] font-semibold mt-1.5">
                           (₹{activeRec.netReturnPerKg} net cash in hand / kg @ ₹{activeRec.unitPrice}/kg AGMARKNET)
                         </div>
                       </div>
@@ -509,7 +509,7 @@ export default function HeroSection({
                       {/* Trade-off Rationale Callout */}
                       <div className="space-y-2 text-xs text-[#1D2420] mb-5">
                         {tradeOffs && (
-                          <div className="p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 text-[11px] text-amber-900 leading-snug">
+                          <div className="p-3 rounded-2xl clay-card-gold text-[11px] text-amber-950 leading-snug">
                             <span className="font-bold">⚖️ {lang === 'hi' ? "विकल्प तुलना:" : "Trade-off:"} </span>
                             <span>{lang === 'hi' ? tradeOffs.summaryHi : tradeOffs.summaryEn}</span>
                           </div>
@@ -537,28 +537,28 @@ export default function HeroSection({
                 })()}
 
                 {/* Primary Actions */}
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   <button
                     onClick={onScrollToPlan}
-                    className="w-full py-3 rounded-xl bg-[#173B2B] text-[#F7F5EF] font-bold text-xs uppercase tracking-wider hover:bg-[#224D39] transition flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full py-3.5 rounded-2xl clay-button-primary text-[#F7F5EF] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                   >
                     <span>{lang === 'hi' ? "पूरा हिसाब व रवानगी योजना" : "View Breakdown & Dispatch Plan"}</span>
-                    <ArrowRight className="w-4 h-4 text-[#B59658]" />
+                    <ArrowRight className="w-4 h-4 text-[#D4BA7B]" />
                   </button>
 
                   {onOpenPlanBuilder && (
                     <button
                       onClick={onOpenPlanBuilder}
-                      className="w-full py-2.5 rounded-xl bg-[#B59658]/15 text-[#173B2B] font-bold text-xs hover:bg-[#B59658]/25 transition flex items-center justify-center gap-1.5 border border-[#B59658]/40"
+                      className="w-full py-3 rounded-2xl clay-button-brass text-[#173B2B] font-bold text-xs flex items-center justify-center gap-2"
                     >
-                      <Sparkles className="w-3.5 h-3.5 text-[#B59658]" />
+                      <Sparkles className="w-4 h-4 text-[#173B2B]" />
                       <span>{lang === 'hi' ? "अपनी फसल व मात्रा का नया प्लान बनाएं" : "Create Custom Fasal Plan"}</span>
                     </button>
                   )}
 
                   <button
                     onClick={onOpenMandiMitra}
-                    className="w-full py-2.5 rounded-xl bg-[#EEEDE7] text-[#173B2B] font-semibold text-xs hover:bg-[#E3DFD2] transition flex items-center justify-center gap-2"
+                    className="w-full py-2.5 rounded-2xl clay-button-light text-[#173B2B] font-bold text-xs flex items-center justify-center gap-2"
                   >
                     <Bot className="w-4 h-4 text-[#315C43]" />
                     <span>{t.hero.ctaSecondary}</span>

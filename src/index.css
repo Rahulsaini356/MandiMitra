@@ -126,3 +126,124 @@ p, span, div, li {
 .animate-kenburns {
   animation: kenburns 20s infinite ease-in-out;
 }
+
+/* ==============================================================
+   TACTILE CLAYMORPHISM SYSTEM (Organic 3D Farmhouse Clay)
+   ============================================================== */
+.clay-card {
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 8px 14px 28px -4px rgba(29, 36, 32, 0.07),
+              -6px -6px 18px 0px rgba(255, 255, 255, 0.9),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+              inset -2px -2px 4px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 18px 32px -4px rgba(29, 36, 32, 0.09),
+              -6px -6px 20px 0px rgba(255, 255, 255, 0.95),
+              inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+              inset -2px -2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.clay-card-forest {
+  background: linear-gradient(145deg, #1A4231 0%, #133324 100%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 12px 18px 36px -4px rgba(15, 38, 28, 0.4),
+              -6px -6px 20px 0px rgba(255, 255, 255, 0.08),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.2),
+              inset -2px -2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.clay-card-gold {
+  background: linear-gradient(145deg, #FDFBF7 0%, #F5EEDB 100%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(212, 186, 123, 0.45);
+  box-shadow: 8px 16px 28px -4px rgba(181, 150, 88, 0.2),
+              -6px -6px 16px 0px rgba(255, 255, 255, 0.95),
+              inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+              inset -2px -2px 5px rgba(181, 150, 88, 0.18);
+}
+
+.clay-inset {
+  border-radius: 1.25rem;
+  background: #EFECE3;
+  box-shadow: inset 3px 3px 6px rgba(29, 36, 32, 0.08),
+              inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.clay-button-primary {
+  background: linear-gradient(145deg, #1E4D38 0%, #143526 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 14px rgba(23, 59, 43, 0.25),
+              -2px -2px 8px rgba(255, 255, 255, 0.5),
+              inset 1px 2px 3px rgba(255, 255, 255, 0.3),
+              inset -1px -2px 4px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-button-primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(23, 59, 43, 0.3),
+              -2px -2px 10px rgba(255, 255, 255, 0.6),
+              inset 1px 2px 3px rgba(255, 255, 255, 0.35),
+              inset -1px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clay-button-primary:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.4),
+              inset -2px -2px 4px rgba(255, 255, 255, 0.15);
+}
+
+.clay-button-brass {
+  background: linear-gradient(145deg, #C5A461 0%, #A68748 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 14px rgba(181, 150, 88, 0.3),
+              -2px -2px 8px rgba(255, 255, 255, 0.7),
+              inset 1px 2px 3px rgba(255, 255, 255, 0.45),
+              inset -1px -2px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-button-brass:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(181, 150, 88, 0.38),
+              -2px -2px 10px rgba(255, 255, 255, 0.8),
+              inset 1px 2px 3px rgba(255, 255, 255, 0.5),
+              inset -1px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.clay-button-light {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F5F3EB 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 3px 6px 14px rgba(29, 36, 32, 0.06),
+              -3px -3px 10px rgba(255, 255, 255, 0.95),
+              inset 1px 2px 3px rgba(255, 255, 255, 0.95),
+              inset -1px -2px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-button-light:hover {
+  transform: translateY(-1px);
+  box-shadow: 4px 8px 18px rgba(29, 36, 32, 0.08),
+              -3px -3px 12px rgba(255, 255, 255, 1),
+              inset 1px 2px 3px rgba(255, 255, 255, 1),
+              inset -1px -2px 3px rgba(0, 0, 0, 0.03);
+}
+
+.clay-pill {
+  border-radius: 9999px;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F6F4ED 100%);
+  box-shadow: 3px 5px 12px -2px rgba(29, 36, 32, 0.06),
+              -3px -3px 8px rgba(255, 255, 255, 0.95),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.9),
+              inset -1px -1px 2px rgba(0, 0, 0, 0.03);
+}

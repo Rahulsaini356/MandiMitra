@@ -37,7 +37,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           
           {/* CONTRASTING MANDI: High Price or Long Haul Comparison Card */}
-          <div className="bg-white rounded-2xl p-8 border border-[#E3DFD2] shadow-warm-sm flex flex-col justify-between relative overflow-hidden">
+          <div className="clay-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-[#E3DFD2]/80">
             <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-28 h-28 bg-[#A84242]/5 rounded-full pointer-events-none"></div>
             
             <div>
@@ -45,7 +45,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
                 <span className="text-xs uppercase tracking-wider font-bold text-[#68736C]">
                   {lang === 'hi' ? mandiContrast.mandiHindiName : mandiContrast.mandiName}
                 </span>
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
                   {priceDiff > 0 ? (lang === 'hi' ? "ऊँचा भाव लेकिन कम बचत" : "Higher Rate Trap") : (lang === 'hi' ? "वैकल्पिक विकल्प" : "Alternative Option")}
                 </span>
               </div>
@@ -69,7 +69,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
               </div>
 
               {/* Cost Deductions */}
-              <div className="bg-[#F7F5EF] p-4 rounded-xl space-y-2.5 text-xs text-[#68736C] mb-6 border border-[#E3DFD2]">
+              <div className="clay-inset p-4.5 rounded-2xl space-y-2.5 text-xs text-[#68736C] mb-6">
                 <div className="flex justify-between">
                   <span>{lang === 'hi' ? "सड़क दूरी:" : "Road Distance:"}</span>
                   <span className="font-semibold text-[#1D2420]">{mandiContrast.distanceKm} km</span>
@@ -106,7 +106,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
           </div>
 
           {/* RECOMMENDED MANDI: Optimal Real Profit Card */}
-          <div className="bg-[#173B2B] text-[#F7F5EF] rounded-2xl p-8 border-2 border-[#B59658] shadow-warm-lg flex flex-col justify-between relative overflow-hidden">
+          <div className="clay-card-forest rounded-3xl p-6 sm:p-8 border-2 border-[#B59658] flex flex-col justify-between relative overflow-hidden">
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#B59658]/10 rounded-full blur-xl pointer-events-none"></div>
             
             <div>
@@ -114,7 +114,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
                 <span className="text-xs uppercase tracking-wider font-bold text-[#D4BA7B]">
                   {lang === 'hi' ? mandiWinning.mandiHindiName : mandiWinning.mandiName}
                 </span>
-                <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-[#B59658] text-[#173B2B]">
+                <span className="text-xs font-bold px-3 py-1 rounded-full clay-button-brass text-[#173B2B]">
                   ★ {t.recommendation.badge}
                 </span>
               </div>
@@ -136,7 +136,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
               </div>
 
               {/* Cost Deductions */}
-              <div className="bg-white/5 p-4 rounded-xl space-y-2.5 text-xs text-[#EBE8DE] mb-6 border border-white/10">
+              <div className="bg-black/25 backdrop-blur-sm p-4.5 rounded-2xl space-y-2.5 text-xs text-[#EBE8DE] mb-6 border border-white/10 shadow-clay-inset">
                 <div className="flex justify-between">
                   <span>{lang === 'hi' ? "सड़क दूरी:" : "Road Distance:"}</span>
                   <span className="font-semibold text-white">{mandiWinning.distanceKm} km (Optimal route)</span>

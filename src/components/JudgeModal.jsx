@@ -6,12 +6,12 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] shadow-2xl border border-[#E3DFD2] flex flex-col overflow-hidden">
+      <div className="clay-card rounded-3xl w-full max-w-2xl max-h-[90vh] border border-white/80 flex flex-col overflow-hidden">
         
         {/* Modal Header */}
-        <div className="bg-[#173B2B] text-[#F7F5EF] p-6 flex items-center justify-between border-b border-[#173B2B]">
+        <div className="bg-[#173B2B] text-[#F7F5EF] p-6 flex items-center justify-between border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#B59658] flex items-center justify-center text-[#173B2B]">
+            <div className="w-10 h-10 rounded-xl bg-[#315C43] flex items-center justify-center text-[#B59658] shadow-sm">
               <Award className="w-6 h-6" />
             </div>
             <div>
@@ -31,7 +31,7 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
 
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition"
+            className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -41,7 +41,7 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
         <div className="p-6 overflow-y-auto space-y-4 bg-[#F7F5EF]">
           
           {/* 1. WHAT */}
-          <div className="p-4 bg-white rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 rounded-2xl border border-white/80">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B59658] block mb-1">
               1. {t.judge.what.title}
             </span>
@@ -51,7 +51,7 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
           </div>
 
           {/* 2. FOR WHOM */}
-          <div className="p-4 bg-white rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 rounded-2xl border border-white/80">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B59658] block mb-1">
               2. {t.judge.who.title}
             </span>
@@ -61,17 +61,17 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
           </div>
 
           {/* 3. WHY */}
-          <div className="p-4 bg-amber-50/70 rounded-2xl border border-amber-200 shadow-warm-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-900 block mb-1">
+          <div className="clay-card-gold p-4 rounded-2xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#173B2B] block mb-1">
               3. {t.judge.why.title} (THE INSIGHT)
             </span>
-            <p className="text-sm font-serif font-bold text-amber-950 leading-snug">
+            <p className="text-sm font-serif font-bold text-[#173B2B] leading-snug">
               {t.judge.why.desc}
             </p>
           </div>
 
           {/* 4. HOW */}
-          <div className="p-4 bg-white rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 rounded-2xl border border-white/80">
             <span className="text-xs font-bold uppercase tracking-wider text-[#B59658] block mb-1">
               4. {t.judge.how.title} (THE FORMULA)
             </span>
@@ -81,7 +81,7 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
           </div>
 
           {/* 5. OUTPUT */}
-          <div className="p-4 bg-[#173B2B] text-[#F7F5EF] rounded-2xl border border-[#173B2B] shadow-warm-sm">
+          <div className="clay-card-forest text-[#F7F5EF] p-4 rounded-2xl">
             <span className="text-xs font-bold uppercase tracking-wider text-[#D4BA7B] block mb-1">
               5. {t.judge.output.title}
             </span>
@@ -91,7 +91,7 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
           </div>
 
           {/* 6. AI SUPPORT */}
-          <div className="p-4 bg-white rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 rounded-2xl border border-white/80">
             <span className="text-xs font-bold uppercase tracking-wider text-[#315C43] block mb-1">
               6. {t.judge.ai.title}
             </span>
@@ -103,10 +103,10 @@ export default function JudgeModal({ isOpen, onClose, t, lang }) {
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 bg-white border-t border-[#E3DFD2] flex justify-end">
+        <div className="p-4 bg-white/80 border-t border-[#E3DFD2] flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-[#173B2B] text-white font-semibold text-sm hover:bg-[#224D39] transition"
+            className="clay-button-primary px-6 py-2.5 rounded-xl font-semibold text-sm cursor-pointer"
           >
             {t.judge.closeBtn}
           </button>

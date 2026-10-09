@@ -200,7 +200,7 @@ export default function LiveRouteMapCard({
 
             {/* Live Metrics Row */}
             <div className="grid grid-cols-3 gap-3 pt-3 border-t border-[#E3DFD2] text-center">
-              <div className="bg-white p-3 rounded-xl border border-[#E3DFD2]">
+              <div className="clay-card rounded-2xl p-3 border border-white/80">
                 <div className="text-[10px] uppercase font-bold text-[#68736C] flex items-center justify-center gap-1">
                   <Navigation className="w-3 h-3 text-emerald-600" />
                   <span>{lang === 'hi' ? "सड़क दूरी" : "Road Distance"}</span>
@@ -211,7 +211,7 @@ export default function LiveRouteMapCard({
                 <div className="text-[10px] text-[#8FA58E]">OSRM Live</div>
               </div>
 
-              <div className="bg-white p-3 rounded-xl border border-[#E3DFD2]">
+              <div className="clay-card rounded-2xl p-3 border border-white/80">
                 <div className="text-[10px] uppercase font-bold text-[#68736C] flex items-center justify-center gap-1">
                   <Clock className="w-3 h-3 text-emerald-600" />
                   <span>{lang === 'hi' ? "यात्रा समय" : "Transit Time"}</span>
@@ -222,7 +222,7 @@ export default function LiveRouteMapCard({
                 <div className="text-[10px] text-[#8FA58E]">Real Road Speed</div>
               </div>
 
-              <div className="bg-white p-3 rounded-xl border border-[#E3DFD2]">
+              <div className="clay-card rounded-2xl p-3 border border-white/80">
                 <div className="text-[10px] uppercase font-bold text-[#68736C] flex items-center justify-center gap-1">
                   <Truck className="w-3 h-3 text-[#B59658]" />
                   <span>{lang === 'hi' ? "गाड़ी भाड़ा" : "Total Freight"}</span>

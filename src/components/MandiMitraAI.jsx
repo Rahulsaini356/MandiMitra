@@ -674,10 +674,10 @@ export default function MandiMitraAI({
                   className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   <div
-                    className={`max-w-[88%] rounded-2xl p-4 text-sm leading-relaxed ${
+                    className={`max-w-[88%] p-4 text-sm leading-relaxed ${
                       msg.sender === 'user'
-                        ? 'bg-[#173B2B] text-[#F7F5EF] rounded-br-none shadow-sm'
-                        : 'bg-white text-[#1D2420] border border-[#E3DFD2] rounded-bl-none shadow-warm-sm'
+                        ? 'clay-card-forest text-[#F7F5EF] rounded-3xl rounded-br-none'
+                        : 'clay-card text-[#1D2420] border border-white/80 rounded-3xl rounded-bl-none'
                     }`}
                   >
                     {msg.sender === 'assistant' && (
@@ -694,7 +694,7 @@ export default function MandiMitraAI({
                           )}
                           <button
                             onClick={() => handleSpeakSingleMessage(msg.text)}
-                            className="p-1 rounded hover:bg-[#EEEDE7] text-[#315C43] transition"
+                            className="p-1 rounded-lg hover:bg-[#EEEDE7] text-[#315C43] transition"
                             title="Listen"
                           >
                             <Volume2 className="w-3.5 h-3.5" />
@@ -713,10 +713,10 @@ export default function MandiMitraAI({
               {/* Thinking with Gemini Indicator */}
               {isThinking && (
                 <div className="flex items-start gap-2.5 max-w-[85%] animate-fade-in">
-                  <div className="w-8 h-8 rounded-xl bg-[#173B2B] text-[#B59658] flex items-center justify-center flex-shrink-0 border border-[#B59658]/30 shadow-sm">
+                  <div className="w-9 h-9 rounded-2xl clay-button-primary text-[#B59658] flex items-center justify-center flex-shrink-0">
                     <Sparkles className="w-4 h-4 animate-spin text-[#D4BA7B]" />
                   </div>
-                  <div className="bg-white border border-[#E3DFD2] rounded-2xl rounded-bl-none p-3.5 shadow-warm-sm">
+                  <div className="clay-card border border-white/80 rounded-3xl rounded-bl-none p-4">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#173B2B]">
                       <Loader2 className="w-3.5 h-3.5 animate-spin text-[#315C43]" />
                       <span>
@@ -729,7 +729,7 @@ export default function MandiMitraAI({
 
               {/* Listening Indicator */}
               {isListening && (
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs animate-pulse">
+                <div className="flex items-center gap-2 p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-xs animate-pulse clay-card">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
                   <span className="font-bold">
                     {lang === 'hi' ? "आपकी आवाज़ सुन रहे हैं... कृपया बोलें" : "Listening to your voice... Speak now"}
@@ -741,7 +741,7 @@ export default function MandiMitraAI({
             </div>
 
             {/* Quick Questions Pills */}
-            <div className="p-2.5 sm:p-3 bg-white border-t border-[#E3DFD2] overflow-x-auto flex-shrink-0">
+            <div className="p-3 bg-white/70 backdrop-blur-sm border-t border-[#E3DFD2] overflow-x-auto flex-shrink-0">
               <div className="text-[11px] font-bold uppercase tracking-wider text-[#68736C] mb-1.5 px-1">
                 {t.assistant.quickQuestionsTitle}:
               </div>
@@ -750,7 +750,7 @@ export default function MandiMitraAI({
                   <button
                     key={idx}
                     onClick={() => handleProcessQuery(lang === 'hi' ? item.qHi : item.qEn)}
-                    className="text-xs text-left px-3 py-1.5 rounded-lg bg-[#EEEDE7] text-[#173B2B] hover:bg-[#315C43] hover:text-white transition whitespace-nowrap border border-[#E3DFD2] font-medium flex-shrink-0"
+                    className="clay-pill text-xs text-left px-3.5 py-1.5 text-[#173B2B] hover:text-[#315C43] transition whitespace-nowrap font-medium flex-shrink-0"
                   >
                     {lang === 'hi' ? item.qHi : item.qEn}
                   </button>
@@ -759,14 +759,14 @@ export default function MandiMitraAI({
             </div>
 
             {/* Input Bar with Mic & Send */}
-            <form onSubmit={handleCustomSend} className="p-3 sm:p-4 bg-white border-t border-[#E3DFD2] flex items-center gap-2 flex-shrink-0">
+            <form onSubmit={handleCustomSend} className="p-3 sm:p-4 bg-white/90 backdrop-blur-sm border-t border-[#E3DFD2] flex items-center gap-2 flex-shrink-0">
               <button
                 type="button"
                 onClick={startListening}
-                className={`p-2.5 rounded-xl border transition flex-shrink-0 ${
+                className={`p-3 rounded-xl transition flex-shrink-0 ${
                   isListening 
-                    ? 'bg-red-600 text-white border-red-600 animate-pulse' 
-                    : 'bg-[#EEEDE7] text-[#173B2B] border-[#E3DFD2] hover:bg-[#E3DFD2]'
+                    ? 'bg-red-600 text-white animate-pulse shadow-md' 
+                    : 'clay-button-light text-[#173B2B]'
                 }`}
                 title="Speak"
               >
@@ -781,19 +781,19 @@ export default function MandiMitraAI({
                 placeholder={
                   lang === 'hi' ? "मंडी, भाव या गाड़ी का हिसाब पूछें..." : t.assistant.inputPlaceholder
                 }
-                className="flex-1 px-3.5 sm:px-4 py-2.5 rounded-xl border border-[#E3DFD2] focus:outline-none focus:border-[#173B2B] text-xs sm:text-sm text-[#1D2420] disabled:bg-gray-100"
+                className="flex-1 px-4 py-2.5 rounded-xl clay-inset text-xs sm:text-sm text-[#1D2420] focus:outline-none disabled:bg-gray-100 border-none"
               />
 
               <button
                 type="submit"
                 disabled={isThinking || !inputText.trim()}
-                className="px-4 sm:px-5 py-2.5 rounded-xl bg-[#173B2B] text-[#F7F5EF] font-semibold text-xs sm:text-sm hover:bg-[#224D39] transition flex items-center gap-1.5 flex-shrink-0 disabled:opacity-50"
+                className="px-4 sm:px-5 py-2.5 rounded-xl clay-button-primary text-[#F7F5EF] font-bold text-xs sm:text-sm flex items-center gap-1.5 flex-shrink-0 disabled:opacity-50"
               >
                 <span>{t.assistant.sendBtn}</span>
                 {isThinking ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin text-[#B59658]" />
                 ) : (
-                  <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#B59658]" />
+                  <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4BA7B]" />
                 )}
               </button>
             </form>

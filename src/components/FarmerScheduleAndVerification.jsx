@@ -177,7 +177,7 @@ export default function FarmerScheduleAndVerification({
         )}
 
         {/* 1. TOP CARD: 4-POINT VERIFICATION CHECKLIST */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#E3DFD2] shadow-warm-sm mb-8 sm:mb-10">
+        <div className="clay-card rounded-3xl p-6 sm:p-8 border border-white/80 mb-8 sm:mb-10">
           <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#EEEDE7]">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-[#315C43]" />
@@ -185,7 +185,7 @@ export default function FarmerScheduleAndVerification({
                 {lang === 'hi' ? "4-बिंदु योजना सत्यापन (क्या यह योजना सुरक्षित है?)" : "4-Point Feasibility Checklist (Can This Plan Work?)"}
               </h3>
             </div>
-            <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-100 text-emerald-800">
+            <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full clay-button-brass text-[#173B2B]">
               {lang === 'hi' ? "सभी 4 बिंदु सफल" : "4 / 4 Passed"}
             </span>
           </div>
@@ -194,9 +194,9 @@ export default function FarmerScheduleAndVerification({
             {verificationItems.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-4 rounded-xl sm:rounded-2xl bg-[#F7F5EF] border border-[#E3DFD2] flex items-start gap-3.5 hover:bg-[#F2EFE6] transition"
+                className="clay-inset p-4.5 rounded-2xl flex items-start gap-3.5 transition"
               >
-                <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -219,7 +219,7 @@ export default function FarmerScheduleAndVerification({
         </div>
 
         {/* 2. MIDDLE CARD: STEP-BY-STEP DISPATCH JOURNEY SCHEDULE */}
-        <div className="bg-[#173B2B] text-[#F7F5EF] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-warm-lg mb-8 sm:mb-10 relative overflow-hidden">
+        <div className="clay-card-forest text-[#F7F5EF] rounded-3xl p-6 sm:p-8 lg:p-10 mb-8 sm:mb-10 relative overflow-hidden border border-white/10">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#B59658]/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-white/10">

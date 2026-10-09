@@ -146,9 +146,9 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={() => setIsMandiMitraOpen(true)}
-          className="flex items-center gap-2.5 px-4 sm:px-5 py-3 sm:py-3.5 rounded-full bg-[#173B2B] text-[#F7F5EF] shadow-2xl border-2 border-[#B59658] hover:bg-[#224D39] transition transform hover:scale-105 group"
+          className="flex items-center gap-2.5 px-4 sm:px-5 py-3 sm:py-3.5 rounded-full clay-button-primary border-2 border-[#B59658] transition transform hover:scale-105 group cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-full bg-[#315C43] flex items-center justify-center text-[#B59658] group-hover:rotate-12 transition flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-[#315C43] flex items-center justify-center text-[#B59658] group-hover:rotate-12 transition flex-shrink-0 shadow-inner">
             <Bot className="w-5 h-5" />
           </div>
           <div className="text-left hidden sm:block">

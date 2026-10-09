@@ -217,7 +217,7 @@ export default function SalePlanBuilderModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/75 backdrop-blur-sm animate-fade-in overflow-y-auto">
-      <div className="bg-[#F7F5EF] text-[#1D2420] w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl border border-[#173B2B]/20 overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div className="clay-card text-[#1D2420] w-full max-w-4xl rounded-2xl sm:rounded-3xl border border-white/80 overflow-hidden my-auto max-h-[92vh] flex flex-col">
         
         {/* Modal Header */}
         <div className="bg-[#173B2B] text-white p-4 sm:p-5 flex items-center justify-between border-b border-white/10 flex-shrink-0">
@@ -244,7 +244,7 @@ export default function SalePlanBuilderModal({
 
           <button
             onClick={() => { stopSpeech(); onClose(); }}
-            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition flex-shrink-0"
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition flex-shrink-0 cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -254,7 +254,7 @@ export default function SalePlanBuilderModal({
         <div className="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1">
           
           {/* STEP 1: CROP & QUANTITY */}
-          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/80">
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#EEEDE7] flex-wrap gap-2">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-[#173B2B] text-[#D4BA7B] flex items-center justify-center text-xs font-bold font-mono">1</span>
@@ -280,7 +280,7 @@ export default function SalePlanBuilderModal({
 
             {/* Custom Crop Input Mode */}
             {isCustomCropMode ? (
-              <div className="p-4 bg-[#F7F5EF] rounded-xl border border-[#E3DFD2] mb-3 grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-in">
+              <div className="clay-inset p-4 rounded-2xl mb-3 grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-in">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#68736C] mb-1">
                     {lang === 'hi' ? "फसल का नाम:" : "Crop Name:"}
@@ -290,7 +290,7 @@ export default function SalePlanBuilderModal({
                     placeholder={lang === 'hi' ? "उदा. सौंफ, इसबगोल, मैथी..." : "e.g., Fennel, Groundnut..."}
                     value={customCropName}
                     onChange={(e) => { setCustomCropName(e.target.value); setIsCalculated(false); }}
-                    className="w-full bg-white border border-[#E3DFD2] rounded-xl px-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none"
+                    className="w-full bg-white/90 border border-[#E3DFD2] rounded-xl px-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none shadow-xs"
                   />
                 </div>
                 <div>
@@ -301,7 +301,7 @@ export default function SalePlanBuilderModal({
                     type="number"
                     value={customCropPrice}
                     onChange={(e) => { setCustomCropPrice(Number(e.target.value)); setIsCalculated(false); }}
-                    className="w-full bg-white border border-[#E3DFD2] rounded-xl px-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none"
+                    className="w-full bg-white/90 border border-[#E3DFD2] rounded-xl px-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none shadow-xs"
                   />
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function SalePlanBuilderModal({
                       placeholder={lang === 'hi' ? "24+ फसलों में खोजें (उदा. मक्का, लहसुन, टमाटर, सरसों)..." : "Search 24+ crops (e.g. Maize, Garlic, Tomato, Mustard)..."}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-[#F7F5EF] border border-[#E3DFD2] rounded-xl pl-9 pr-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none focus:border-[#173B2B]"
+                      className="w-full clay-inset rounded-xl pl-9 pr-3 py-2 text-xs font-semibold text-[#173B2B] focus:outline-none"
                     />
                   </div>
 
@@ -331,10 +331,10 @@ export default function SalePlanBuilderModal({
                         key={cat.id}
                         type="button"
                         onClick={() => setCategoryFilter(cat.id)}
-                        className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition border ${
+                        className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                           categoryFilter === cat.id
-                            ? 'bg-[#173B2B] text-[#D4BA7B] border-[#173B2B]'
-                            : 'bg-[#F7F5EF] text-[#68736C] border-[#E3DFD2] hover:bg-[#EEEDE7]'
+                            ? 'clay-button-primary'
+                            : 'clay-button-light text-[#68736C]'
                         }`}
                       >
                         {lang === 'hi' ? cat.labelHi : cat.labelEn}
@@ -344,7 +344,7 @@ export default function SalePlanBuilderModal({
                 </div>
 
                 {/* Crops Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 max-h-48 overflow-y-auto p-1 border border-[#EEEDE7] rounded-xl bg-[#F7F5EF]/60">
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 max-h-48 overflow-y-auto p-2 rounded-xl clay-inset">
                   {filteredCrops.map((c) => {
                     const isSelected = selectedCrop.id === c.id;
                     return (
@@ -352,10 +352,10 @@ export default function SalePlanBuilderModal({
                         key={c.id}
                         type="button"
                         onClick={() => { setSelectedCrop(c); setIsCalculated(false); }}
-                        className={`p-2 rounded-xl text-left transition flex flex-col justify-between border cursor-pointer ${
+                        className={`p-2 rounded-xl text-left transition flex flex-col justify-between cursor-pointer ${
                           isSelected
-                            ? 'bg-[#173B2B] text-white border-[#B59658] shadow-md scale-102'
-                            : 'bg-white hover:bg-[#F7F5EF] text-[#1D2420] border-[#E3DFD2]'
+                            ? 'clay-button-primary scale-102'
+                            : 'clay-button-light hover:bg-[#F7F5EF] text-[#1D2420]'
                         }`}
                       >
                         <div className="flex items-center justify-between w-full mb-1">
@@ -377,7 +377,7 @@ export default function SalePlanBuilderModal({
             )}
 
             {/* Selected Crop Banner */}
-            <div className="mt-3 bg-[#173B2B]/5 p-2.5 rounded-xl border border-[#173B2B]/10 flex items-center justify-between text-xs flex-wrap gap-2">
+            <div className="mt-3 clay-inset p-3 rounded-xl flex items-center justify-between text-xs flex-wrap gap-2">
               <div className="flex items-center gap-2">
                 <span className="text-xl">{activeCrop.emoji}</span>
                 <span className="font-semibold text-[#173B2B]">
@@ -403,7 +403,7 @@ export default function SalePlanBuilderModal({
                     step="50"
                     value={quantityKg}
                     onChange={(e) => { setQuantityKg(Number(e.target.value)); setIsCalculated(false); }}
-                    className="w-full bg-[#F7F5EF] border border-[#E3DFD2] rounded-xl px-4 py-2.5 text-base font-bold text-[#173B2B] focus:outline-none focus:border-[#173B2B]"
+                    className="w-full clay-inset rounded-xl px-4 py-2.5 text-base font-bold text-[#173B2B] focus:outline-none"
                   />
                   <span className="absolute right-3.5 top-2.5 text-xs font-semibold text-[#68736C]">
                     kg ({(quantityKg / 100).toFixed(1)} Qtl)
@@ -422,10 +422,10 @@ export default function SalePlanBuilderModal({
                       key={q}
                       type="button"
                       onClick={() => { setQuantityKg(q); setIsCalculated(false); }}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold border transition cursor-pointer ${
+                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition cursor-pointer ${
                         quantityKg === q 
-                          ? 'bg-[#B59658] text-[#173B2B] border-[#B59658] font-bold' 
-                          : 'bg-[#F7F5EF] text-[#68736C] border-[#E3DFD2] hover:bg-[#EEEDE7]'
+                          ? 'clay-button-brass font-bold' 
+                          : 'clay-button-light text-[#68736C]'
                       }`}
                     >
                       {q} kg
@@ -437,7 +437,7 @@ export default function SalePlanBuilderModal({
           </div>
 
           {/* STEP 2: LOCATION & LOGISTICS ALLOCATION */}
-          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-[#E3DFD2] shadow-warm-sm">
+          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/80">
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#EEEDE7] flex-wrap gap-2">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-[#173B2B] text-[#D4BA7B] flex items-center justify-center text-xs font-bold font-mono">2</span>
@@ -491,7 +491,7 @@ export default function SalePlanBuilderModal({
                     setLocationSuccessMsg(null); 
                     setIsCalculated(false); 
                   }}
-                  className="w-full bg-[#F7F5EF] border border-[#E3DFD2] rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold text-[#173B2B] focus:outline-none cursor-pointer"
+                  className="w-full clay-inset rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-[#173B2B] focus:outline-none cursor-pointer"
                 >
                   {liveGPSCoords && (
                     <option value={farmLocation}>
@@ -515,7 +515,7 @@ export default function SalePlanBuilderModal({
                 <select
                   value={vehicleChoice}
                   onChange={(e) => { setVehicleChoice(e.target.value); setIsCalculated(false); }}
-                  className="w-full bg-[#F7F5EF] border border-[#E3DFD2] rounded-xl px-3.5 py-2 text-xs sm:text-sm font-semibold text-[#173B2B] focus:outline-none cursor-pointer"
+                  className="w-full clay-inset rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-[#173B2B] focus:outline-none cursor-pointer"
                 >
                   <option value="auto">
                     🤖 {lang === 'hi' ? "एजेंटिक एआई स्वतः सबसे उपयुक्त गाड़ी चुने (सिफारिश)" : "AI Auto-Match Optimal Vehicle (Recommended)"}
@@ -530,7 +530,7 @@ export default function SalePlanBuilderModal({
             </div>
 
             {/* Assigned Vehicle Callout */}
-            <div className="mt-3 bg-[#EEEDE7] p-2.5 rounded-xl border border-[#E3DFD2] flex items-center justify-between text-xs">
+            <div className="mt-3 clay-inset p-3 rounded-xl flex items-center justify-between text-xs">
               <span className="text-[#68736C]">
                 {lang === 'hi' ? "वर्तमान चयनित गाड़ी:" : "Currently Assigned Vehicle:"}
               </span>
@@ -544,9 +544,9 @@ export default function SalePlanBuilderModal({
           <div className="text-center pt-1">
             <button
               onClick={handleCalculate}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#173B2B] text-[#F7F5EF] font-bold text-sm uppercase tracking-wider hover:bg-[#224D39] transition shadow-lg flex items-center justify-center gap-2 mx-auto border-2 border-[#B59658] cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-2xl clay-button-primary font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 mx-auto cursor-pointer"
             >
-              <Zap className="w-4 h-4 text-[#B59658]" />
+              <Zap className="w-4 h-4 text-[#D4BA7B]" />
               <span>
                 {lang === 'hi' 
                   ? `एजेंटिक एआई से ${activeCrop.hindiName} की 2-मंडी योजना खोजें` 
@@ -557,7 +557,7 @@ export default function SalePlanBuilderModal({
 
           {/* STEP 3: AGENTIC MATHEMATICAL CALCULATION RESULTS (2 MANDIS SUGGESTED) */}
           {isCalculated && (
-            <div className="bg-[#173B2B] text-white p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#B59658] shadow-2xl relative overflow-hidden animate-fade-in">
+            <div className="clay-card-forest text-white p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#B59658]/40 relative overflow-hidden animate-fade-in">
               <div className="absolute top-0 right-0 w-80 h-80 bg-[#B59658]/10 rounded-full blur-3xl pointer-events-none"></div>
 
               {/* Title & Speech Bar */}
@@ -591,7 +591,7 @@ export default function SalePlanBuilderModal({
                 {/* OPTION 1: HIGHEST ESTIMATED NET RETURN */}
                 <div className={`p-4 rounded-2xl border transition ${
                   activeTab === 'rec1' 
-                    ? 'bg-black/50 border-[#B59658] ring-2 ring-[#B59658]/50' 
+                    ? 'clay-card-gold ring-2 ring-[#B59658]' 
                     : 'bg-black/30 border-white/10 hover:border-white/30'
                 }`}>
                   <div className="flex items-center justify-between mb-2">
@@ -610,7 +610,7 @@ export default function SalePlanBuilderModal({
                   </div>
 
                   {/* Net Return Highlight */}
-                  <div className="my-3 p-3 rounded-xl bg-black/40 border border-white/10">
+                  <div className="my-3 p-3 rounded-xl clay-inset bg-black/40 border border-white/10">
                     <div className="text-[11px] text-[#8FA58E] uppercase font-bold">
                       {lang === 'hi' ? "हाथ में शुद्ध मुनाफा:" : "Net Take-Home Cash:"}
                     </div>
@@ -624,10 +624,10 @@ export default function SalePlanBuilderModal({
 
                   <button
                     onClick={() => setActiveTab('rec1')}
-                    className={`w-full py-2 rounded-lg text-xs font-bold transition cursor-pointer ${
+                    className={`w-full py-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
                       activeTab === 'rec1' 
-                        ? 'bg-[#B59658] text-[#173B2B]' 
-                        : 'bg-white/10 text-white hover:bg-white/20'
+                        ? 'clay-button-brass text-[#173B2B]' 
+                        : 'clay-button-light text-white hover:bg-white/20'
                     }`}
                   >
                     {lang === 'hi' ? "विकल्प 1 का पूरा विवरण देखें" : "View Breakdown (Option 1)"}
@@ -638,7 +638,7 @@ export default function SalePlanBuilderModal({
                 {rec2 ? (
                   <div className={`p-4 rounded-2xl border transition ${
                     activeTab === 'rec2' 
-                      ? 'bg-black/50 border-emerald-400 ring-2 ring-emerald-400/50' 
+                      ? 'clay-card-forest ring-2 ring-emerald-400' 
                       : 'bg-black/30 border-white/10 hover:border-white/30'
                   }`}>
                     <div className="flex items-center justify-between mb-2">
@@ -657,7 +657,7 @@ export default function SalePlanBuilderModal({
                     </div>
 
                     {/* Net Return Highlight */}
-                    <div className="my-3 p-3 rounded-xl bg-black/40 border border-white/10">
+                    <div className="my-3 p-3 rounded-xl clay-inset bg-black/40 border border-white/10">
                       <div className="text-[11px] text-[#8FA58E] uppercase font-bold">
                         {lang === 'hi' ? "हाथ में शुद्ध मुनाफा:" : "Net Take-Home Cash:"}
                       </div>
@@ -671,10 +671,10 @@ export default function SalePlanBuilderModal({
 
                     <button
                       onClick={() => setActiveTab('rec2')}
-                      className={`w-full py-2 rounded-lg text-xs font-bold transition cursor-pointer ${
+                      className={`w-full py-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
                         activeTab === 'rec2' 
-                          ? 'bg-emerald-600 text-white' 
-                          : 'bg-white/10 text-white hover:bg-white/20'
+                          ? 'clay-button-primary text-white' 
+                          : 'clay-button-light text-white hover:bg-white/20'
                       }`}
                     >
                       {lang === 'hi' ? "विकल्प 2 का पूरा विवरण देखें" : "View Breakdown (Option 2)"}
@@ -711,7 +711,7 @@ export default function SalePlanBuilderModal({
               {(() => {
                 const activeMandi = (activeTab === 'rec2' && rec2) ? rec2 : rec1;
                 return (
-                  <div className="bg-black/40 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 mb-4">
+                  <div className="bg-black/40 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/10 mb-4 clay-inset">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#D4BA7B] mb-3 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
                         <Scale className="w-4 h-4" />
@@ -774,7 +774,7 @@ export default function SalePlanBuilderModal({
               <div className="flex flex-col sm:flex-row gap-2.5">
                 <button
                   onClick={handleApply}
-                  className="flex-1 py-3.5 rounded-xl bg-[#B59658] text-[#173B2B] font-bold text-xs uppercase tracking-wider hover:bg-[#D4BA7B] transition flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                  className="flex-1 py-3.5 rounded-2xl clay-button-brass font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>
@@ -786,7 +786,7 @@ export default function SalePlanBuilderModal({
 
                 <button
                   onClick={() => { stopSpeech(); onClose(); }}
-                  className="py-3.5 px-6 rounded-xl bg-white/15 text-white font-semibold text-xs hover:bg-white/25 transition cursor-pointer"
+                  className="py-3.5 px-6 rounded-2xl clay-button-light text-[#173B2B] font-semibold text-xs transition cursor-pointer"
                 >
                   {lang === 'hi' ? "बंद करें" : "Close"}
                 </button>
