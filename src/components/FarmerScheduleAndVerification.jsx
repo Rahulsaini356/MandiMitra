@@ -177,7 +177,7 @@ export default function FarmerScheduleAndVerification({
         )}
 
         {/* 1. TOP CARD: 4-POINT VERIFICATION CHECKLIST */}
-        <div className="clay-card rounded-3xl p-6 sm:p-8 border border-white/80 mb-8 sm:mb-10">
+        <div className="clay-card rounded-3xl p-6 sm:p-8 border-2 border-[#D6D1C4] mb-8 sm:mb-10">
           <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#EEEDE7]">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-[#315C43]" />

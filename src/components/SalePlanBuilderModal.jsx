@@ -217,7 +217,7 @@ export default function SalePlanBuilderModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/75 backdrop-blur-sm animate-fade-in overflow-y-auto">
-      <div className="clay-card text-[#1D2420] w-full max-w-4xl rounded-2xl sm:rounded-3xl border border-white/80 overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div className="clay-card text-[#1D2420] w-full max-w-4xl rounded-2xl sm:rounded-3xl border-2 border-[#D6D1C4] overflow-hidden my-auto max-h-[92vh] flex flex-col">
         
         {/* Modal Header */}
         <div className="bg-[#173B2B] text-white p-4 sm:p-5 flex items-center justify-between border-b border-white/10 flex-shrink-0">
@@ -254,7 +254,7 @@ export default function SalePlanBuilderModal({
         <div className="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1">
           
           {/* STEP 1: CROP & QUANTITY */}
-          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/80">
+          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-[#D6D1C4]">
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#EEEDE7] flex-wrap gap-2">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-[#173B2B] text-[#D4BA7B] flex items-center justify-center text-xs font-bold font-mono">1</span>
@@ -437,7 +437,7 @@ export default function SalePlanBuilderModal({
           </div>
 
           {/* STEP 2: LOCATION & LOGISTICS ALLOCATION */}
-          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/80">
+          <div className="clay-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border-2 border-[#D6D1C4]">
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#EEEDE7] flex-wrap gap-2">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-[#173B2B] text-[#D4BA7B] flex items-center justify-center text-xs font-bold font-mono">2</span>

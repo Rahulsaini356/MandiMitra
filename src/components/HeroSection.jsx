@@ -430,17 +430,17 @@ export default function HeroSection({
 
             {/* Right Column: DUAL RECOMMENDATION DECISION CARD */}
             <div className="lg:col-span-5">
-              <div className="clay-card bg-white/95 backdrop-blur-md text-[#1D2420] rounded-3xl p-5 sm:p-7 border border-white/70">
+              <div className="clay-card bg-white text-[#1D2420] rounded-3xl p-5 sm:p-7 border-2 border-[#D6D1C4] shadow-2xl">
                 
                 {/* Dual Option Switcher Tabs when both exist */}
                 {rec2 ? (
-                  <div className="flex items-center gap-2 p-1.5 clay-inset rounded-2xl mb-4">
+                  <div className="flex items-center gap-2 p-1.5 clay-inset rounded-2xl mb-4 border border-[#DFDDD4]">
                     <button
                       onClick={() => setSelectedRecTab('rec1')}
                       className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                         selectedRecTab === 'rec1'
                           ? 'clay-button-primary text-[#D4BA7B]'
-                          : 'text-[#68736C] hover:text-[#173B2B]'
+                          : 'text-[#68736C] hover:text-[#173B2B] font-semibold'
                       }`}
                     >
                       <Award className="w-3.5 h-3.5 text-[#D4BA7B]" />
@@ -451,7 +451,7 @@ export default function HeroSection({
                       className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                         selectedRecTab === 'rec2'
                           ? 'clay-button-primary text-[#D4BA7B]'
-                          : 'text-[#68736C] hover:text-[#173B2B]'
+                          : 'text-[#68736C] hover:text-[#173B2B] font-semibold'
                       }`}
                     >
                       <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />

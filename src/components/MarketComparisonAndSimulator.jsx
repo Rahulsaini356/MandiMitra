@@ -96,7 +96,7 @@ export default function MarketComparisonAndSimulator({
         </div>
 
         {/* 1. TOP MODULE: EDITORIAL ALL-MANDIS COMPARISON TABLE */}
-        <div className="clay-card rounded-3xl border border-white/80 overflow-hidden mb-10 sm:mb-14">
+        <div className="clay-card rounded-3xl border-2 border-[#D6D1C4] overflow-hidden mb-10 sm:mb-14">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left border-collapse">
               <thead>
@@ -222,7 +222,7 @@ export default function MarketComparisonAndSimulator({
         </div>
 
         {/* 2. BOTTOM MODULE: SENSITIVITY & WHAT-IF RE-OPTIMIZER */}
-        <div className="clay-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/80">
+        <div className="clay-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-[#D6D1C4]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[#EEEDE7]">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#B59658] mb-1">

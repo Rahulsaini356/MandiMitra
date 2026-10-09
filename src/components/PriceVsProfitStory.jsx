@@ -37,7 +37,7 @@ export default function PriceVsProfitStory({ t, lang, result }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           
           {/* CONTRASTING MANDI: High Price or Long Haul Comparison Card */}
-          <div className="clay-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-[#E3DFD2]/80">
+          <div className="clay-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-2 border-[#D6D1C4]">
             <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-28 h-28 bg-[#A84242]/5 rounded-full pointer-events-none"></div>
             
             <div>

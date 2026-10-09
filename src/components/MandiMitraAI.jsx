@@ -677,7 +677,7 @@ export default function MandiMitraAI({
                     className={`max-w-[88%] p-4 text-sm leading-relaxed ${
                       msg.sender === 'user'
                         ? 'clay-card-forest text-[#F7F5EF] rounded-3xl rounded-br-none'
-                        : 'clay-card text-[#1D2420] border border-white/80 rounded-3xl rounded-bl-none'
+                        : 'clay-card text-[#1D2420] border border-[#D6D1C4] rounded-3xl rounded-bl-none'
                     }`}
                   >
                     {msg.sender === 'assistant' && (
@@ -716,7 +716,7 @@ export default function MandiMitraAI({
                   <div className="w-9 h-9 rounded-2xl clay-button-primary text-[#B59658] flex items-center justify-center flex-shrink-0">
                     <Sparkles className="w-4 h-4 animate-spin text-[#D4BA7B]" />
                   </div>
-                  <div className="clay-card border border-white/80 rounded-3xl rounded-bl-none p-4">
+                  <div className="clay-card border border-[#D6D1C4] rounded-3xl rounded-bl-none p-4">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#173B2B]">
                       <Loader2 className="w-3.5 h-3.5 animate-spin text-[#315C43]" />
                       <span>
